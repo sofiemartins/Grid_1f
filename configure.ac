@@ -171,6 +171,8 @@ case ${ac_Nc} in
         AC_DEFINE([Config_Nc],[4],[Gauge group Nc]);;
     5)
         AC_DEFINE([Config_Nc],[5],[Gauge group Nc]);;
+    6) 
+	AC_DEFINE([Config_Nc],[6],[Gauge group Nc]);;
     *)
       AC_MSG_ERROR(["Unsupport gauge group choice Nc = ${ac_Nc}"]);;
 esac

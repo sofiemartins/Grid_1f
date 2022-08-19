@@ -55,22 +55,32 @@ include Make.inc
 include Eigen.inc
 
 extra_sources+=$(WILS_FERMION_FILES)
-extra_sources+=$(STAG_FERMION_FILES)
-if BUILD_ZMOBIUS
-  extra_sources+=$(ZWILS_FERMION_FILES)
-endif
-if BUILD_GPARITY
-  extra_sources+=$(GP_FERMION_FILES)
-endif
+
+# No staggered
+# extra_sources+=$(STAG_FERMION_FILES)
+
+# if BUILD_ZMOBIUS
+#   extra_sources+=$(ZWILS_FERMION_FILES)
+# endif
+# if BUILD_GPARITY
+#   extra_sources+=$(GP_FERMION_FILES)
+# endif
 if BUILD_FERMION_REPS
-  extra_sources+=$(ADJ_FERMION_FILES)
+   # No adjoint fermions: Here the fermion representations do not
+   # compile for CUDA Nc>=5 or HIP acceleration for any Nc. 
+   # extra_sources+=$(ADJ_FERMION_FILES)
   extra_sources+=$(TWOIND_FERMION_FILES)
 endif
 
 lib_LIBRARIES = libGrid.a
 
 CCFILES += $(extra_sources)
-HFILES  += $(extra_headers) Config.h Version.h
+
+# For some reason Config.h and Version.h are added twice which 
+# causes errors in make install. They are already listed in 
+# extra_headers.
+# HFILES  += $(extra_headers) Config.h Version.h
+HFILES += $(extra_headers)
 
 libGrid_a_SOURCES              = $(CCFILES)
 libGrid_adir                   = $(includedir)/Grid
