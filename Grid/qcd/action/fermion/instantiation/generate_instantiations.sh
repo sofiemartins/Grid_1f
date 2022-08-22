@@ -7,16 +7,8 @@ STAG_IMPL_LIST=" \
 STAG5_IMPL_LIST=""
 
 WILSON_IMPL_LIST=" \
-	   WilsonImplF \
-	   WilsonImplD \
-	   WilsonAdjImplF \
-	   WilsonAdjImplD \
-	   WilsonTwoIndexSymmetricImplF \
-	   WilsonTwoIndexSymmetricImplD \
 	   WilsonTwoIndexAntiSymmetricImplF \
-	   WilsonTwoIndexAntiSymmetricImplD \
-	   GparityWilsonImplF \
-	   GparityWilsonImplD "
+	   WilsonTwoIndexAntiSymmetricImplD "
 
 COMPACT_WILSON_IMPL_LIST=" \
 	   WilsonImplF \
